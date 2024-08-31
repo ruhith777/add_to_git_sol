@@ -1,0 +1,1630 @@
+{
+    "contractName": "Crowdfunding",
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                }
+            ],
+            "name": "addCampaign",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "campaigns",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "campId",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "string",
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "donate_fund",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "target",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "campId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "donate",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "owner",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "campId",
+                    "type": "uint256"
+                }
+            ],
+            "name": "withdraw",
+            "outputs": [],
+            "stateMutability": "payable",
+            "type": "function"
+        }
+    ],
+    "metadata": "{\"compiler\":{\"version\":\"0.8.24+commit.e11b9ed9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"}],\"name\":\"addCampaign\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"campaigns\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"campId\",\"type\":\"uint256\"},{\"internalType\":\"string\",\"name\":\"name\",\"type\":\"string\"},{\"internalType\":\"uint256\",\"name\":\"donate_fund\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"target\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"campId\",\"type\":\"uint256\"}],\"name\":\"donate\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"campId\",\"type\":\"uint256\"}],\"name\":\"withdraw\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/Users/sky/Desktop/add_to_git_sol/Crowdfunding/Crowdfunding.sol\":\"Crowdfunding\"},\"evmVersion\":\"shanghai\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/sky/Desktop/add_to_git_sol/Crowdfunding/Crowdfunding.sol\":{\"keccak256\":\"0x1f6273770a639536699c65c9d58850998d2329dd9557397d4a8e64cfd9a5a6cb\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://4611e4f8225c12add94fc72bb6283d375feca5cc34eab73de58bdbf1f947c087\",\"dweb:/ipfs/QmTTZwsqdrsweSbvjS6s6dtuGK7EQwVyoFbSErdrssbTnN\"]}},\"version\":1}",
+    "bytecode": "608060405234801561000f575f80fd5b506107128061001d5f395ff3fe608060405260043610610049575f3560e01c8063141961bc1461004d578063202e7be4146100855780632e1a7d4d146100a6578063666e1b39146100b9578063f14faf6f146100f2575b5f80fd5b348015610058575f80fd5b5061006c6100673660046103df565b610105565b60405161007c94939291906103f6565b60405180910390f35b348015610090575f80fd5b506100a461009f36600461046c565b6101c4565b005b6100a46100b43660046103df565b610249565b3480156100c4575f80fd5b506100e46100d3366004610517565b60016020525f908152604090205481565b60405190815260200161007c565b6100a46101003660046103df565b61039b565b5f8181548110610113575f80fd5b5f918252602090912060049091020180546001820180549193509061013790610544565b80601f016020809104026020016040519081016040528092919081815260200182805461016390610544565b80156101ae5780601f10610185576101008083540402835291602001916101ae565b820191905f5260205f20905b81548152906001019060200180831161019157829003601f168201915b5050505050908060020154908060030154905084565b5f60405180608001604052805f8054905060016101e19190610590565b815260208082018590525f604083018190526103e8606090930192909252835460018181018655948352918190208351600490930201918255820151919290919082019061022f90826105f5565b506040820151816002015560608201518160030155505050565b5f6102556001836106b5565b81548110610265576102656106c8565b905f5260205f209060040201600201545f60018361028391906106b5565b81548110610293576102936106c8565b905f5260205f20906004020160030154106102e95760405162461bcd60e51b81526020600482015260126024820152711d185c99d95d081b9bdd081c995858da195960721b604482015260640160405180910390fd5b5f806102f66001846106b5565b81548110610306576103066106c8565b905f5260205f2090600402016002015f82825461032391906106b5565b909155505f90506103356001836106b5565b81548110610345576103456106c8565b5f9182526020808320600260049093020191909101543383526001918290526040832055819061037590846106b5565b81548110610385576103856106c8565b905f5260205f2090600402016002018190555050565b34805f6103a96001856106b5565b815481106103b9576103b96106c8565b905f5260205f2090600402016002015f8282546103d69190610590565b90915550505050565b5f602082840312156103ef575f80fd5b5035919050565b8481525f60206080602084015285518060808501525f5b818110156104295787810183015185820160a00152820161040d565b505f60a0828601015260a0601f19601f8301168501019250505083604083015282606083015295945050505050565b634e487b7160e01b5f52604160045260245ffd5b5f6020828403121561047c575f80fd5b813567ffffffffffffffff80821115610493575f80fd5b818401915084601f8301126104a6575f80fd5b8135818111156104b8576104b8610458565b604051601f8201601f19908116603f011681019083821181831017156104e0576104e0610458565b816040528281528760208487010111156104f8575f80fd5b826020860160208301375f928101602001929092525095945050505050565b5f60208284031215610527575f80fd5b81356001600160a01b038116811461053d575f80fd5b9392505050565b600181811c9082168061055857607f821691505b60208210810361057657634e487b7160e01b5f52602260045260245ffd5b50919050565b634e487b7160e01b5f52601160045260245ffd5b808201808211156105a3576105a361057c565b92915050565b601f8211156105f057805f5260205f20601f840160051c810160208510156105ce5750805b601f840160051c820191505b818110156105ed575f81556001016105da565b50505b505050565b815167ffffffffffffffff81111561060f5761060f610458565b6106238161061d8454610544565b846105a9565b602080601f831160018114610656575f841561063f5750858301515b5f19600386901b1c1916600185901b1785556106ad565b5f85815260208120601f198616915b8281101561068457888601518255948401946001909101908401610665565b50858210156106a157878501515f19600388901b60f8161c191681555b505060018460011b0185555b505050505050565b818103818111156105a3576105a361057c565b634e487b7160e01b5f52603260045260245ffdfea264697066735822122023ef27b6a9c31cb9dfb2588a664ba81574b4754c2eec7837004e2b33cd92f40d64736f6c63430008180033",
+    "deployedBytecode": "608060405260043610610049575f3560e01c8063141961bc1461004d578063202e7be4146100855780632e1a7d4d146100a6578063666e1b39146100b9578063f14faf6f146100f2575b5f80fd5b348015610058575f80fd5b5061006c6100673660046103df565b610105565b60405161007c94939291906103f6565b60405180910390f35b348015610090575f80fd5b506100a461009f36600461046c565b6101c4565b005b6100a46100b43660046103df565b610249565b3480156100c4575f80fd5b506100e46100d3366004610517565b60016020525f908152604090205481565b60405190815260200161007c565b6100a46101003660046103df565b61039b565b5f8181548110610113575f80fd5b5f918252602090912060049091020180546001820180549193509061013790610544565b80601f016020809104026020016040519081016040528092919081815260200182805461016390610544565b80156101ae5780601f10610185576101008083540402835291602001916101ae565b820191905f5260205f20905b81548152906001019060200180831161019157829003601f168201915b5050505050908060020154908060030154905084565b5f60405180608001604052805f8054905060016101e19190610590565b815260208082018590525f604083018190526103e8606090930192909252835460018181018655948352918190208351600490930201918255820151919290919082019061022f90826105f5565b506040820151816002015560608201518160030155505050565b5f6102556001836106b5565b81548110610265576102656106c8565b905f5260205f209060040201600201545f60018361028391906106b5565b81548110610293576102936106c8565b905f5260205f20906004020160030154106102e95760405162461bcd60e51b81526020600482015260126024820152711d185c99d95d081b9bdd081c995858da195960721b604482015260640160405180910390fd5b5f806102f66001846106b5565b81548110610306576103066106c8565b905f5260205f2090600402016002015f82825461032391906106b5565b909155505f90506103356001836106b5565b81548110610345576103456106c8565b5f9182526020808320600260049093020191909101543383526001918290526040832055819061037590846106b5565b81548110610385576103856106c8565b905f5260205f2090600402016002018190555050565b34805f6103a96001856106b5565b815481106103b9576103b96106c8565b905f5260205f2090600402016002015f8282546103d69190610590565b90915550505050565b5f602082840312156103ef575f80fd5b5035919050565b8481525f60206080602084015285518060808501525f5b818110156104295787810183015185820160a00152820161040d565b505f60a0828601015260a0601f19601f8301168501019250505083604083015282606083015295945050505050565b634e487b7160e01b5f52604160045260245ffd5b5f6020828403121561047c575f80fd5b813567ffffffffffffffff80821115610493575f80fd5b818401915084601f8301126104a6575f80fd5b8135818111156104b8576104b8610458565b604051601f8201601f19908116603f011681019083821181831017156104e0576104e0610458565b816040528281528760208487010111156104f8575f80fd5b826020860160208301375f928101602001929092525095945050505050565b5f60208284031215610527575f80fd5b81356001600160a01b038116811461053d575f80fd5b9392505050565b600181811c9082168061055857607f821691505b60208210810361057657634e487b7160e01b5f52602260045260245ffd5b50919050565b634e487b7160e01b5f52601160045260245ffd5b808201808211156105a3576105a361057c565b92915050565b601f8211156105f057805f5260205f20601f840160051c810160208510156105ce5750805b601f840160051c820191505b818110156105ed575f81556001016105da565b50505b505050565b815167ffffffffffffffff81111561060f5761060f610458565b6106238161061d8454610544565b846105a9565b602080601f831160018114610656575f841561063f5750858301515b5f19600386901b1c1916600185901b1785556106ad565b5f85815260208120601f198616915b8281101561068457888601518255948401946001909101908401610665565b50858210156106a157878501515f19600388901b60f8161c191681555b505060018460011b0185555b505050505050565b818103818111156105a3576105a361057c565b634e487b7160e01b5f52603260045260245ffdfea264697066735822122023ef27b6a9c31cb9dfb2588a664ba81574b4754c2eec7837004e2b33cd92f40d64736f6c63430008180033",
+    "sourceMap": "59:953:0:-:0;;;;;;;;;;;;;;;;;;;",
+    "deployedSourceMap": "59:953:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;310:27;;;;;;;;;;-1:-1:-1;310:27:0;;;;;:::i;:::-;;:::i;:::-;;;;;;;;;;:::i;:::-;;;;;;;;387:124;;;;;;;;;;-1:-1:-1;387:124:0;;;;;:::i;:::-;;:::i;:::-;;661:349;;;;;;:::i;:::-;;:::i;343:37::-;;;;;;;;;;-1:-1:-1;343:37:0;;;;;:::i;:::-;;;;;;;;;;;;;;;;;2466:25:1;;;2454:2;2439:18;343:37:0;2320:177:1;517:138:0;;;;;;:::i;:::-;;:::i;310:27::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;310:27:0;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;387:124::-;446:9;461:42;;;;;;;;470:9;:16;;;;489:1;470:20;;;;:::i;:::-;461:42;;;;;;;;;-1:-1:-1;461:42:0;;;;;;498:4;461:42;;;;;;;;446:58;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;387:124;:::o;661:349::-;759:9;769:10;778:1;769:6;:10;:::i;:::-;759:21;;;;;;;;:::i;:::-;;;;;;;;;;;:33;;;727:9;746:1;737:6;:10;;;;:::i;:::-;727:21;;;;;;;;:::i;:::-;;;;;;;;;;;:28;;;:65;719:95;;;;-1:-1:-1;;;719:95:0;;5786:2:1;719:95:0;;;5768:21:1;5825:2;5805:18;;;5798:30;-1:-1:-1;;;5844:18:1;;;5837:48;5902:18;;719:95:0;;;;;;;;862:1;;835:10;844:1;835:6;:10;:::i;:::-;825:21;;;;;;;;:::i;:::-;;;;;;;;;;;:33;;;:38;;;;;;;:::i;:::-;;;;-1:-1:-1;921:9:0;;-1:-1:-1;931:10:0;940:1;931:6;:10;:::i;:::-;921:21;;;;;;;;:::i;:::-;;;;;;;;;:33;:21;;;;;:33;;;;;906:10;900:17;;:5;:17;;;;;;;:54;921:21;;975:10;;:6;:10;:::i;:::-;965:21;;;;;;;;:::i;:::-;;;;;;;;;;;:33;;:37;;;;661:349;:::o;517:138::-;586:9;;572:11;615:10;624:1;615:6;:10;:::i;:::-;605:21;;;;;;;;:::i;:::-;;;;;;;;;;;:33;;;:43;;;;;;;:::i;:::-;;;;-1:-1:-1;;;;517:138:0:o;14:180:1:-;73:6;126:2;114:9;105:7;101:23;97:32;94:52;;;142:1;139;132:12;94:52;-1:-1:-1;165:23:1;;14:180;-1:-1:-1;14:180:1:o;199:766::-;432:6;421:9;414:25;395:4;458:2;496:3;491:2;480:9;476:18;469:31;529:6;523:13;573:6;567:3;556:9;552:19;545:35;598:1;608:141;622:6;619:1;616:13;608:141;;;718:14;;;714:23;;708:30;683:17;;;702:3;679:27;672:67;637:10;;608:141;;;612:3;799:1;793:3;784:6;773:9;769:22;765:32;758:43;869:3;862:2;858:7;853:2;845:6;841:15;837:29;826:9;822:45;818:55;810:63;;;;909:6;904:2;893:9;889:18;882:34;952:6;947:2;936:9;932:18;925:34;199:766;;;;;;;:::o;970:127::-;1031:10;1026:3;1022:20;1019:1;1012:31;1062:4;1059:1;1052:15;1086:4;1083:1;1076:15;1102:922;1171:6;1224:2;1212:9;1203:7;1199:23;1195:32;1192:52;;;1240:1;1237;1230:12;1192:52;1280:9;1267:23;1309:18;1350:2;1342:6;1339:14;1336:34;;;1366:1;1363;1356:12;1336:34;1404:6;1393:9;1389:22;1379:32;;1449:7;1442:4;1438:2;1434:13;1430:27;1420:55;;1471:1;1468;1461:12;1420:55;1507:2;1494:16;1529:2;1525;1522:10;1519:36;;;1535:18;;:::i;:::-;1610:2;1604:9;1578:2;1664:13;;-1:-1:-1;;1660:22:1;;;1684:2;1656:31;1652:40;1640:53;;;1708:18;;;1728:22;;;1705:46;1702:72;;;1754:18;;:::i;:::-;1794:10;1790:2;1783:22;1829:2;1821:6;1814:18;1869:7;1864:2;1859;1855;1851:11;1847:20;1844:33;1841:53;;;1890:1;1887;1880:12;1841:53;1946:2;1941;1937;1933:11;1928:2;1920:6;1916:15;1903:46;1991:1;1969:15;;;1986:2;1965:24;1958:35;;;;-1:-1:-1;1973:6:1;1102:922;-1:-1:-1;;;;;1102:922:1:o;2029:286::-;2088:6;2141:2;2129:9;2120:7;2116:23;2112:32;2109:52;;;2157:1;2154;2147:12;2109:52;2183:23;;-1:-1:-1;;;;;2235:31:1;;2225:42;;2215:70;;2281:1;2278;2271:12;2215:70;2304:5;2029:286;-1:-1:-1;;;2029:286:1:o;2502:380::-;2581:1;2577:12;;;;2624;;;2645:61;;2699:4;2691:6;2687:17;2677:27;;2645:61;2752:2;2744:6;2741:14;2721:18;2718:38;2715:161;;2798:10;2793:3;2789:20;2786:1;2779:31;2833:4;2830:1;2823:15;2861:4;2858:1;2851:15;2715:161;;2502:380;;;:::o;2887:127::-;2948:10;2943:3;2939:20;2936:1;2929:31;2979:4;2976:1;2969:15;3003:4;3000:1;2993:15;3019:125;3084:9;;;3105:10;;;3102:36;;;3118:18;;:::i;:::-;3019:125;;;;:::o;3275:518::-;3377:2;3372:3;3369:11;3366:421;;;3413:5;3410:1;3403:16;3457:4;3454:1;3444:18;3527:2;3515:10;3511:19;3508:1;3504:27;3498:4;3494:38;3563:4;3551:10;3548:20;3545:47;;;-1:-1:-1;3586:4:1;3545:47;3641:2;3636:3;3632:12;3629:1;3625:20;3619:4;3615:31;3605:41;;3696:81;3714:2;3707:5;3704:13;3696:81;;;3773:1;3759:16;;3740:1;3729:13;3696:81;;;3700:3;;3366:421;3275:518;;;:::o;3969:1345::-;4095:3;4089:10;4122:18;4114:6;4111:30;4108:56;;;4144:18;;:::i;:::-;4173:97;4263:6;4223:38;4255:4;4249:11;4223:38;:::i;:::-;4217:4;4173:97;:::i;:::-;4325:4;;4382:2;4371:14;;4399:1;4394:663;;;;5101:1;5118:6;5115:89;;;-1:-1:-1;5170:19:1;;;5164:26;5115:89;-1:-1:-1;;3926:1:1;3922:11;;;3918:24;3914:29;3904:40;3950:1;3946:11;;;3901:57;5217:81;;4364:944;;4394:663;3222:1;3215:14;;;3259:4;3246:18;;-1:-1:-1;;4430:20:1;;;4548:236;4562:7;4559:1;4556:14;4548:236;;;4651:19;;;4645:26;4630:42;;4743:27;;;;4711:1;4699:14;;;;4578:19;;4548:236;;;4552:3;4812:6;4803:7;4800:19;4797:201;;;4873:19;;;4867:26;-1:-1:-1;;4956:1:1;4952:14;;;4968:3;4948:24;4944:37;4940:42;4925:58;4910:74;;4797:201;;;5044:1;5035:6;5032:1;5028:14;5024:22;5018:4;5011:36;4364:944;;;;;3969:1345;;:::o;5319:128::-;5386:9;;;5407:11;;;5404:37;;;5421:18;;:::i;5452:127::-;5513:10;5508:3;5504:20;5501:1;5494:31;5544:4;5541:1;5534:15;5568:4;5565:1;5558:15",
+    "sourcePath": "/Users/sky/Desktop/add_to_git_sol/Crowdfunding/Crowdfunding.sol",
+    "compiler": {
+        "name": "solc",
+        "version": "0.8.24+commit.e11b9ed9"
+    },
+    "ast": {
+        "absolutePath": "/Users/sky/Desktop/add_to_git_sol/Crowdfunding/Crowdfunding.sol",
+        "exportedSymbols": {
+            "Crowdfunding": [
+                112
+            ]
+        },
+        "id": 113,
+        "license": "MIT",
+        "nodeType": "SourceUnit",
+        "nodes": [
+            {
+                "id": 1,
+                "literals": [
+                    "solidity",
+                    "^",
+                    "0.8",
+                    ".24"
+                ],
+                "nodeType": "PragmaDirective",
+                "src": "33:24:0"
+            },
+            {
+                "abstract": false,
+                "baseContracts": [],
+                "canonicalName": "Crowdfunding",
+                "contractDependencies": [],
+                "contractKind": "contract",
+                "fullyImplemented": true,
+                "id": 112,
+                "linearizedBaseContracts": [
+                    112
+                ],
+                "name": "Crowdfunding",
+                "nameLocation": "68:12:0",
+                "nodeType": "ContractDefinition",
+                "nodes": [
+                    {
+                        "canonicalName": "Crowdfunding.campaign",
+                        "id": 10,
+                        "members": [
+                            {
+                                "constant": false,
+                                "id": 3,
+                                "mutability": "mutable",
+                                "name": "campId",
+                                "nameLocation": "222:6:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 10,
+                                "src": "217:11:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 2,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "217:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 5,
+                                "mutability": "mutable",
+                                "name": "name",
+                                "nameLocation": "245:4:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 10,
+                                "src": "238:11:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_string_storage_ptr",
+                                    "typeString": "string"
+                                },
+                                "typeName": {
+                                    "id": 4,
+                                    "name": "string",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "238:6:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_storage_ptr",
+                                        "typeString": "string"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 7,
+                                "mutability": "mutable",
+                                "name": "donate_fund",
+                                "nameLocation": "264:11:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 10,
+                                "src": "259:16:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 6,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "259:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "visibility": "internal"
+                            },
+                            {
+                                "constant": false,
+                                "id": 9,
+                                "mutability": "mutable",
+                                "name": "target",
+                                "nameLocation": "290:6:0",
+                                "nodeType": "VariableDeclaration",
+                                "scope": 10,
+                                "src": "285:11:0",
+                                "stateVariable": false,
+                                "storageLocation": "default",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                },
+                                "typeName": {
+                                    "id": 8,
+                                    "name": "uint",
+                                    "nodeType": "ElementaryTypeName",
+                                    "src": "285:4:0",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    }
+                                },
+                                "visibility": "internal"
+                            }
+                        ],
+                        "name": "campaign",
+                        "nameLocation": "198:8:0",
+                        "nodeType": "StructDefinition",
+                        "scope": 112,
+                        "src": "191:113:0",
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "141961bc",
+                        "id": 14,
+                        "mutability": "mutable",
+                        "name": "campaigns",
+                        "nameLocation": "328:9:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 112,
+                        "src": "310:27:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                            "typeString": "struct Crowdfunding.campaign[]"
+                        },
+                        "typeName": {
+                            "baseType": {
+                                "id": 12,
+                                "nodeType": "UserDefinedTypeName",
+                                "pathNode": {
+                                    "id": 11,
+                                    "name": "campaign",
+                                    "nameLocations": [
+                                        "310:8:0"
+                                    ],
+                                    "nodeType": "IdentifierPath",
+                                    "referencedDeclaration": 10,
+                                    "src": "310:8:0"
+                                },
+                                "referencedDeclaration": 10,
+                                "src": "310:8:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_struct$_campaign_$10_storage_ptr",
+                                    "typeString": "struct Crowdfunding.campaign"
+                                }
+                            },
+                            "id": 13,
+                            "nodeType": "ArrayTypeName",
+                            "src": "310:10:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage_ptr",
+                                "typeString": "struct Crowdfunding.campaign[]"
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "constant": false,
+                        "functionSelector": "666e1b39",
+                        "id": 18,
+                        "mutability": "mutable",
+                        "name": "owner",
+                        "nameLocation": "375:5:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 112,
+                        "src": "343:37:0",
+                        "stateVariable": true,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                            "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                            "typeString": "mapping(address => uint256)"
+                        },
+                        "typeName": {
+                            "id": 17,
+                            "keyName": "",
+                            "keyNameLocation": "-1:-1:-1",
+                            "keyType": {
+                                "id": 15,
+                                "name": "address",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "351:7:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_address",
+                                    "typeString": "address"
+                                }
+                            },
+                            "nodeType": "Mapping",
+                            "src": "343:24:0",
+                            "typeDescriptions": {
+                                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                                "typeString": "mapping(address => uint256)"
+                            },
+                            "valueName": "",
+                            "valueNameLocation": "-1:-1:-1",
+                            "valueType": {
+                                "id": 16,
+                                "name": "uint",
+                                "nodeType": "ElementaryTypeName",
+                                "src": "362:4:0",
+                                "typeDescriptions": {
+                                    "typeIdentifier": "t_uint256",
+                                    "typeString": "uint256"
+                                }
+                            }
+                        },
+                        "visibility": "public"
+                    },
+                    {
+                        "body": {
+                            "id": 37,
+                            "nodeType": "Block",
+                            "src": "436:75:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "arguments": [
+                                                    {
+                                                        "commonType": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        },
+                                                        "id": 30,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "leftExpression": {
+                                                            "expression": {
+                                                                "id": 27,
+                                                                "name": "campaigns",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 14,
+                                                                "src": "470:9:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                                    "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                                }
+                                                            },
+                                                            "id": 28,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "lValueRequested": false,
+                                                            "memberLocation": "480:6:0",
+                                                            "memberName": "length",
+                                                            "nodeType": "MemberAccess",
+                                                            "src": "470:16:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "nodeType": "BinaryOperation",
+                                                        "operator": "+",
+                                                        "rightExpression": {
+                                                            "hexValue": "31",
+                                                            "id": 29,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": true,
+                                                            "kind": "number",
+                                                            "lValueRequested": false,
+                                                            "nodeType": "Literal",
+                                                            "src": "489:1:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_rational_1_by_1",
+                                                                "typeString": "int_const 1"
+                                                            },
+                                                            "value": "1"
+                                                        },
+                                                        "src": "470:20:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    {
+                                                        "id": 31,
+                                                        "name": "name",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 20,
+                                                        "src": "491:4:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        }
+                                                    },
+                                                    {
+                                                        "hexValue": "30",
+                                                        "id": 32,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "496:1:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_0_by_1",
+                                                            "typeString": "int_const 0"
+                                                        },
+                                                        "value": "0"
+                                                    },
+                                                    {
+                                                        "hexValue": "31303030",
+                                                        "id": 33,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "498:4:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_1000_by_1",
+                                                            "typeString": "int_const 1000"
+                                                        },
+                                                        "value": "1000"
+                                                    }
+                                                ],
+                                                "expression": {
+                                                    "argumentTypes": [
+                                                        {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_string_memory_ptr",
+                                                            "typeString": "string memory"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_rational_0_by_1",
+                                                            "typeString": "int_const 0"
+                                                        },
+                                                        {
+                                                            "typeIdentifier": "t_rational_1000_by_1",
+                                                            "typeString": "int_const 1000"
+                                                        }
+                                                    ],
+                                                    "id": 26,
+                                                    "name": "campaign",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 10,
+                                                    "src": "461:8:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_type$_t_struct$_campaign_$10_storage_ptr_$",
+                                                        "typeString": "type(struct Crowdfunding.campaign storage pointer)"
+                                                    }
+                                                },
+                                                "id": 34,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "kind": "structConstructorCall",
+                                                "lValueRequested": false,
+                                                "nameLocations": [],
+                                                "names": [],
+                                                "nodeType": "FunctionCall",
+                                                "src": "461:42:0",
+                                                "tryCall": false,
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_campaign_$10_memory_ptr",
+                                                    "typeString": "struct Crowdfunding.campaign memory"
+                                                }
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_struct$_campaign_$10_memory_ptr",
+                                                    "typeString": "struct Crowdfunding.campaign memory"
+                                                }
+                                            ],
+                                            "expression": {
+                                                "id": 23,
+                                                "name": "campaigns",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 14,
+                                                "src": "446:9:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                    "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                }
+                                            },
+                                            "id": 25,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "456:4:0",
+                                            "memberName": "push",
+                                            "nodeType": "MemberAccess",
+                                            "src": "446:14:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_arraypush_nonpayable$_t_array$_t_struct$_campaign_$10_storage_$dyn_storage_ptr_$_t_struct$_campaign_$10_storage_$returns$__$attached_to$_t_array$_t_struct$_campaign_$10_storage_$dyn_storage_ptr_$",
+                                                "typeString": "function (struct Crowdfunding.campaign storage ref[] storage pointer,struct Crowdfunding.campaign storage ref)"
+                                            }
+                                        },
+                                        "id": 35,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "446:58:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 36,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "446:58:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "202e7be4",
+                        "id": 38,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "addCampaign",
+                        "nameLocation": "396:11:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 21,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 20,
+                                    "mutability": "mutable",
+                                    "name": "name",
+                                    "nameLocation": "422:4:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 38,
+                                    "src": "408:18:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "memory",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_string_memory_ptr",
+                                        "typeString": "string"
+                                    },
+                                    "typeName": {
+                                        "id": 19,
+                                        "name": "string",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "408:6:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_string_storage_ptr",
+                                            "typeString": "string"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "407:20:0"
+                        },
+                        "returnParameters": {
+                            "id": 22,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "436:0:0"
+                        },
+                        "scope": 112,
+                        "src": "387:124:0",
+                        "stateMutability": "nonpayable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "body": {
+                            "id": 57,
+                            "nodeType": "Block",
+                            "src": "562:93:0",
+                            "statements": [
+                                {
+                                    "assignments": [
+                                        44
+                                    ],
+                                    "declarations": [
+                                        {
+                                            "constant": false,
+                                            "id": 44,
+                                            "mutability": "mutable",
+                                            "name": "amount",
+                                            "nameLocation": "577:6:0",
+                                            "nodeType": "VariableDeclaration",
+                                            "scope": 57,
+                                            "src": "572:11:0",
+                                            "stateVariable": false,
+                                            "storageLocation": "default",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            },
+                                            "typeName": {
+                                                "id": 43,
+                                                "name": "uint",
+                                                "nodeType": "ElementaryTypeName",
+                                                "src": "572:4:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                }
+                                            },
+                                            "visibility": "internal"
+                                        }
+                                    ],
+                                    "id": 47,
+                                    "initialValue": {
+                                        "expression": {
+                                            "id": 45,
+                                            "name": "msg",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 4294967281,
+                                            "src": "586:3:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_magic_message",
+                                                "typeString": "msg"
+                                            }
+                                        },
+                                        "id": 46,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "memberLocation": "590:5:0",
+                                        "memberName": "value",
+                                        "nodeType": "MemberAccess",
+                                        "src": "586:9:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "nodeType": "VariableDeclarationStatement",
+                                    "src": "572:23:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 55,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "id": 48,
+                                                    "name": "campaigns",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 14,
+                                                    "src": "605:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                        "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 52,
+                                                "indexExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 51,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "id": 49,
+                                                        "name": "campId",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 40,
+                                                        "src": "615:6:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": "-",
+                                                    "rightExpression": {
+                                                        "hexValue": "31",
+                                                        "id": 50,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "624:1:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_1_by_1",
+                                                            "typeString": "int_const 1"
+                                                        },
+                                                        "value": "1"
+                                                    },
+                                                    "src": "615:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "605:21:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_campaign_$10_storage",
+                                                    "typeString": "struct Crowdfunding.campaign storage ref"
+                                                }
+                                            },
+                                            "id": 53,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "627:11:0",
+                                            "memberName": "donate_fund",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 7,
+                                            "src": "605:33:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "+=",
+                                        "rightHandSide": {
+                                            "id": 54,
+                                            "name": "amount",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [],
+                                            "referencedDeclaration": 44,
+                                            "src": "642:6:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "605:43:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 56,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "605:43:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "f14faf6f",
+                        "id": 58,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "donate",
+                        "nameLocation": "526:6:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 41,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 40,
+                                    "mutability": "mutable",
+                                    "name": "campId",
+                                    "nameLocation": "538:6:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 58,
+                                    "src": "533:11:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 39,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "533:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "532:13:0"
+                        },
+                        "returnParameters": {
+                            "id": 42,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "562:0:0"
+                        },
+                        "scope": 112,
+                        "src": "517:138:0",
+                        "stateMutability": "payable",
+                        "virtual": false,
+                        "visibility": "external"
+                    },
+                    {
+                        "body": {
+                            "id": 110,
+                            "nodeType": "Block",
+                            "src": "709:301:0",
+                            "statements": [
+                                {
+                                    "expression": {
+                                        "arguments": [
+                                            {
+                                                "commonType": {
+                                                    "typeIdentifier": "t_uint256",
+                                                    "typeString": "uint256"
+                                                },
+                                                "id": 76,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "leftExpression": {
+                                                    "expression": {
+                                                        "baseExpression": {
+                                                            "id": 64,
+                                                            "name": "campaigns",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 14,
+                                                            "src": "727:9:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                                "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 68,
+                                                        "indexExpression": {
+                                                            "commonType": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            },
+                                                            "id": 67,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "lValueRequested": false,
+                                                            "leftExpression": {
+                                                                "id": 65,
+                                                                "name": "campId",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 60,
+                                                                "src": "737:6:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_uint256",
+                                                                    "typeString": "uint256"
+                                                                }
+                                                            },
+                                                            "nodeType": "BinaryOperation",
+                                                            "operator": "-",
+                                                            "rightExpression": {
+                                                                "hexValue": "31",
+                                                                "id": 66,
+                                                                "isConstant": false,
+                                                                "isLValue": false,
+                                                                "isPure": true,
+                                                                "kind": "number",
+                                                                "lValueRequested": false,
+                                                                "nodeType": "Literal",
+                                                                "src": "746:1:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_rational_1_by_1",
+                                                                    "typeString": "int_const 1"
+                                                                },
+                                                                "value": "1"
+                                                            },
+                                                            "src": "737:10:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "nodeType": "IndexAccess",
+                                                        "src": "727:21:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_campaign_$10_storage",
+                                                            "typeString": "struct Crowdfunding.campaign storage ref"
+                                                        }
+                                                    },
+                                                    "id": 69,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "749:6:0",
+                                                    "memberName": "target",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 9,
+                                                    "src": "727:28:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "nodeType": "BinaryOperation",
+                                                "operator": "<",
+                                                "rightExpression": {
+                                                    "expression": {
+                                                        "baseExpression": {
+                                                            "id": 70,
+                                                            "name": "campaigns",
+                                                            "nodeType": "Identifier",
+                                                            "overloadedDeclarations": [],
+                                                            "referencedDeclaration": 14,
+                                                            "src": "759:9:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                                "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                            }
+                                                        },
+                                                        "id": 74,
+                                                        "indexExpression": {
+                                                            "commonType": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            },
+                                                            "id": 73,
+                                                            "isConstant": false,
+                                                            "isLValue": false,
+                                                            "isPure": false,
+                                                            "lValueRequested": false,
+                                                            "leftExpression": {
+                                                                "id": 71,
+                                                                "name": "campId",
+                                                                "nodeType": "Identifier",
+                                                                "overloadedDeclarations": [],
+                                                                "referencedDeclaration": 60,
+                                                                "src": "769:6:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_uint256",
+                                                                    "typeString": "uint256"
+                                                                }
+                                                            },
+                                                            "nodeType": "BinaryOperation",
+                                                            "operator": "-",
+                                                            "rightExpression": {
+                                                                "hexValue": "31",
+                                                                "id": 72,
+                                                                "isConstant": false,
+                                                                "isLValue": false,
+                                                                "isPure": true,
+                                                                "kind": "number",
+                                                                "lValueRequested": false,
+                                                                "nodeType": "Literal",
+                                                                "src": "778:1:0",
+                                                                "typeDescriptions": {
+                                                                    "typeIdentifier": "t_rational_1_by_1",
+                                                                    "typeString": "int_const 1"
+                                                                },
+                                                                "value": "1"
+                                                            },
+                                                            "src": "769:10:0",
+                                                            "typeDescriptions": {
+                                                                "typeIdentifier": "t_uint256",
+                                                                "typeString": "uint256"
+                                                            }
+                                                        },
+                                                        "isConstant": false,
+                                                        "isLValue": true,
+                                                        "isPure": false,
+                                                        "lValueRequested": false,
+                                                        "nodeType": "IndexAccess",
+                                                        "src": "759:21:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_struct$_campaign_$10_storage",
+                                                            "typeString": "struct Crowdfunding.campaign storage ref"
+                                                        }
+                                                    },
+                                                    "id": 75,
+                                                    "isConstant": false,
+                                                    "isLValue": true,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "memberLocation": "781:11:0",
+                                                    "memberName": "donate_fund",
+                                                    "nodeType": "MemberAccess",
+                                                    "referencedDeclaration": 7,
+                                                    "src": "759:33:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "src": "727:65:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                }
+                                            },
+                                            {
+                                                "hexValue": "746172676574206e6f742072656163686564",
+                                                "id": 77,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": true,
+                                                "kind": "string",
+                                                "lValueRequested": false,
+                                                "nodeType": "Literal",
+                                                "src": "793:20:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_stringliteral_444788392fb955d85d888814d9002e07b312f8618fdf61927af755bfafcb2a37",
+                                                    "typeString": "literal_string \"target not reached\""
+                                                },
+                                                "value": "target not reached"
+                                            }
+                                        ],
+                                        "expression": {
+                                            "argumentTypes": [
+                                                {
+                                                    "typeIdentifier": "t_bool",
+                                                    "typeString": "bool"
+                                                },
+                                                {
+                                                    "typeIdentifier": "t_stringliteral_444788392fb955d85d888814d9002e07b312f8618fdf61927af755bfafcb2a37",
+                                                    "typeString": "literal_string \"target not reached\""
+                                                }
+                                            ],
+                                            "id": 63,
+                                            "name": "require",
+                                            "nodeType": "Identifier",
+                                            "overloadedDeclarations": [
+                                                4294967278,
+                                                4294967278
+                                            ],
+                                            "referencedDeclaration": 4294967278,
+                                            "src": "719:7:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                                                "typeString": "function (bool,string memory) pure"
+                                            }
+                                        },
+                                        "id": 78,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "kind": "functionCall",
+                                        "lValueRequested": false,
+                                        "nameLocations": [],
+                                        "names": [],
+                                        "nodeType": "FunctionCall",
+                                        "src": "719:95:0",
+                                        "tryCall": false,
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_tuple$__$",
+                                            "typeString": "tuple()"
+                                        }
+                                    },
+                                    "id": 79,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "719:95:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 87,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "id": 80,
+                                                    "name": "campaigns",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 14,
+                                                    "src": "825:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                        "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 84,
+                                                "indexExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 83,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "id": 81,
+                                                        "name": "campId",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 60,
+                                                        "src": "835:6:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": "-",
+                                                    "rightExpression": {
+                                                        "hexValue": "31",
+                                                        "id": 82,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "844:1:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_1_by_1",
+                                                            "typeString": "int_const 1"
+                                                        },
+                                                        "value": "1"
+                                                    },
+                                                    "src": "835:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "825:21:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_campaign_$10_storage",
+                                                    "typeString": "struct Crowdfunding.campaign storage ref"
+                                                }
+                                            },
+                                            "id": 85,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "847:11:0",
+                                            "memberName": "donate_fund",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 7,
+                                            "src": "825:33:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "-=",
+                                        "rightHandSide": {
+                                            "hexValue": "30",
+                                            "id": 86,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "862:1:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_0_by_1",
+                                                "typeString": "int_const 0"
+                                            },
+                                            "value": "0"
+                                        },
+                                        "src": "825:38:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 88,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "825:38:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 99,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "baseExpression": {
+                                                "id": 89,
+                                                "name": "owner",
+                                                "nodeType": "Identifier",
+                                                "overloadedDeclarations": [],
+                                                "referencedDeclaration": 18,
+                                                "src": "900:5:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                                                    "typeString": "mapping(address => uint256)"
+                                                }
+                                            },
+                                            "id": 92,
+                                            "indexExpression": {
+                                                "expression": {
+                                                    "id": 90,
+                                                    "name": "msg",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 4294967281,
+                                                    "src": "906:3:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_magic_message",
+                                                        "typeString": "msg"
+                                                    }
+                                                },
+                                                "id": 91,
+                                                "isConstant": false,
+                                                "isLValue": false,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "memberLocation": "910:6:0",
+                                                "memberName": "sender",
+                                                "nodeType": "MemberAccess",
+                                                "src": "906:10:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_address",
+                                                    "typeString": "address"
+                                                }
+                                            },
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "nodeType": "IndexAccess",
+                                            "src": "900:17:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "id": 93,
+                                                    "name": "campaigns",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 14,
+                                                    "src": "921:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                        "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 97,
+                                                "indexExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 96,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "id": 94,
+                                                        "name": "campId",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 60,
+                                                        "src": "931:6:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": "-",
+                                                    "rightExpression": {
+                                                        "hexValue": "31",
+                                                        "id": 95,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "940:1:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_1_by_1",
+                                                            "typeString": "int_const 1"
+                                                        },
+                                                        "value": "1"
+                                                    },
+                                                    "src": "931:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "921:21:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_campaign_$10_storage",
+                                                    "typeString": "struct Crowdfunding.campaign storage ref"
+                                                }
+                                            },
+                                            "id": 98,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": false,
+                                            "memberLocation": "943:11:0",
+                                            "memberName": "donate_fund",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 7,
+                                            "src": "921:33:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "src": "900:54:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 100,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "900:54:0"
+                                },
+                                {
+                                    "expression": {
+                                        "id": 108,
+                                        "isConstant": false,
+                                        "isLValue": false,
+                                        "isPure": false,
+                                        "lValueRequested": false,
+                                        "leftHandSide": {
+                                            "expression": {
+                                                "baseExpression": {
+                                                    "id": 101,
+                                                    "name": "campaigns",
+                                                    "nodeType": "Identifier",
+                                                    "overloadedDeclarations": [],
+                                                    "referencedDeclaration": 14,
+                                                    "src": "965:9:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_array$_t_struct$_campaign_$10_storage_$dyn_storage",
+                                                        "typeString": "struct Crowdfunding.campaign storage ref[] storage ref"
+                                                    }
+                                                },
+                                                "id": 105,
+                                                "indexExpression": {
+                                                    "commonType": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    },
+                                                    "id": 104,
+                                                    "isConstant": false,
+                                                    "isLValue": false,
+                                                    "isPure": false,
+                                                    "lValueRequested": false,
+                                                    "leftExpression": {
+                                                        "id": 102,
+                                                        "name": "campId",
+                                                        "nodeType": "Identifier",
+                                                        "overloadedDeclarations": [],
+                                                        "referencedDeclaration": 60,
+                                                        "src": "975:6:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_uint256",
+                                                            "typeString": "uint256"
+                                                        }
+                                                    },
+                                                    "nodeType": "BinaryOperation",
+                                                    "operator": "-",
+                                                    "rightExpression": {
+                                                        "hexValue": "31",
+                                                        "id": 103,
+                                                        "isConstant": false,
+                                                        "isLValue": false,
+                                                        "isPure": true,
+                                                        "kind": "number",
+                                                        "lValueRequested": false,
+                                                        "nodeType": "Literal",
+                                                        "src": "984:1:0",
+                                                        "typeDescriptions": {
+                                                            "typeIdentifier": "t_rational_1_by_1",
+                                                            "typeString": "int_const 1"
+                                                        },
+                                                        "value": "1"
+                                                    },
+                                                    "src": "975:10:0",
+                                                    "typeDescriptions": {
+                                                        "typeIdentifier": "t_uint256",
+                                                        "typeString": "uint256"
+                                                    }
+                                                },
+                                                "isConstant": false,
+                                                "isLValue": true,
+                                                "isPure": false,
+                                                "lValueRequested": false,
+                                                "nodeType": "IndexAccess",
+                                                "src": "965:21:0",
+                                                "typeDescriptions": {
+                                                    "typeIdentifier": "t_struct$_campaign_$10_storage",
+                                                    "typeString": "struct Crowdfunding.campaign storage ref"
+                                                }
+                                            },
+                                            "id": 106,
+                                            "isConstant": false,
+                                            "isLValue": true,
+                                            "isPure": false,
+                                            "lValueRequested": true,
+                                            "memberLocation": "987:11:0",
+                                            "memberName": "donate_fund",
+                                            "nodeType": "MemberAccess",
+                                            "referencedDeclaration": 7,
+                                            "src": "965:33:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_uint256",
+                                                "typeString": "uint256"
+                                            }
+                                        },
+                                        "nodeType": "Assignment",
+                                        "operator": "=",
+                                        "rightHandSide": {
+                                            "hexValue": "30",
+                                            "id": 107,
+                                            "isConstant": false,
+                                            "isLValue": false,
+                                            "isPure": true,
+                                            "kind": "number",
+                                            "lValueRequested": false,
+                                            "nodeType": "Literal",
+                                            "src": "1001:1:0",
+                                            "typeDescriptions": {
+                                                "typeIdentifier": "t_rational_0_by_1",
+                                                "typeString": "int_const 0"
+                                            },
+                                            "value": "0"
+                                        },
+                                        "src": "965:37:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "id": 109,
+                                    "nodeType": "ExpressionStatement",
+                                    "src": "965:37:0"
+                                }
+                            ]
+                        },
+                        "functionSelector": "2e1a7d4d",
+                        "id": 111,
+                        "implemented": true,
+                        "kind": "function",
+                        "modifiers": [],
+                        "name": "withdraw",
+                        "nameLocation": "670:8:0",
+                        "nodeType": "FunctionDefinition",
+                        "parameters": {
+                            "id": 61,
+                            "nodeType": "ParameterList",
+                            "parameters": [
+                                {
+                                    "constant": false,
+                                    "id": 60,
+                                    "mutability": "mutable",
+                                    "name": "campId",
+                                    "nameLocation": "684:6:0",
+                                    "nodeType": "VariableDeclaration",
+                                    "scope": 111,
+                                    "src": "679:11:0",
+                                    "stateVariable": false,
+                                    "storageLocation": "default",
+                                    "typeDescriptions": {
+                                        "typeIdentifier": "t_uint256",
+                                        "typeString": "uint256"
+                                    },
+                                    "typeName": {
+                                        "id": 59,
+                                        "name": "uint",
+                                        "nodeType": "ElementaryTypeName",
+                                        "src": "679:4:0",
+                                        "typeDescriptions": {
+                                            "typeIdentifier": "t_uint256",
+                                            "typeString": "uint256"
+                                        }
+                                    },
+                                    "visibility": "internal"
+                                }
+                            ],
+                            "src": "678:13:0"
+                        },
+                        "returnParameters": {
+                            "id": 62,
+                            "nodeType": "ParameterList",
+                            "parameters": [],
+                            "src": "709:0:0"
+                        },
+                        "scope": 112,
+                        "src": "661:349:0",
+                        "stateMutability": "payable",
+                        "virtual": false,
+                        "visibility": "external"
+                    }
+                ],
+                "scope": 113,
+                "src": "59:953:0",
+                "usedErrors": [],
+                "usedEvents": []
+            }
+        ],
+        "src": "33:979:0"
+    },
+    "functionHashes": {
+        "addCampaign(string)": "202e7be4",
+        "campaigns(uint256)": "141961bc",
+        "donate(uint256)": "f14faf6f",
+        "owner(address)": "666e1b39",
+        "withdraw(uint256)": "2e1a7d4d"
+    },
+    "gasEstimates": {
+        "creation": {
+            "codeDepositCost": "362000",
+            "executionCost": "397",
+            "totalCost": "362397"
+        },
+        "external": {
+            "addCampaign(string)": "infinite",
+            "campaigns(uint256)": "infinite",
+            "donate(uint256)": "infinite",
+            "owner(address)": "2525",
+            "withdraw(uint256)": "infinite"
+        }
+    }
+}
